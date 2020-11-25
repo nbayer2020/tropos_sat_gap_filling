@@ -21,17 +21,48 @@ project = 'Gap Filling Documentation'
 copyright = '2020, Bayer'
 author = 'Bayer'
 
+# The short X.Y version
+version = ''
+# The full version, including alpha/beta/rc tags
+release = 'v0.1'
 
-# -- General configuration ---------------------------------------------------
+
+# -- General configuration---------------------------------------------------
+
+# If your documentation needs a minimal Sphinx version, state it here.
+#
+# needs_sphinx = '1.0'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+#extensions = [
+#]
+# extensions from fabian
 extensions = [
+#    'recommonmark',
+     'm2rr',
+#    'sphinx.ext.autodoc',
+#    'sphinx.ext.autosummary',
+#    'sphinx.ext.napoleon'
 ]
+#################
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
+
+# The suffix(es) of source filenames.
+# You can specify multiple suffix as a list of string:
+#
+source_suffix = ['.rst', '.md']
+#source_suffix = '.rst'
+
+# extension adjustment from fabian
+m2rr_parse_relative_links = True
+m2rr_anonymous_references = False
+m2rr_disable_inline_math = False
+autosummary_generate = True
+autodoc_mock_imports = ["tropy"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

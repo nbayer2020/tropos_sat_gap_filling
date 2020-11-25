@@ -3,14 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Gap Filling Documentation's documentation!
-=====================================================
+Satellite Gap Filling Documentation
+===================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
+   ordering_data
+   copy_data_HTTP
+   extract_tapes
+   filling_gaps
 
 Indices and tables
 ==================
