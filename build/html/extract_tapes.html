@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Extract Data from the Tapes &#8212; Gap Filling Documentation v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Filling gaps in TROPOS archive after delivery" href="filling_gaps.html" />
+    <link rel="prev" title="Copy Data from HTTP" href="copy_data_HTTP.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="extract-data-from-the-tapes">
+<h1>Extract Data from the Tapes<a class="headerlink" href="#extract-data-from-the-tapes" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><p>First you will have to check if the tape machine is ready.</p></li>
+</ol>
+<p>→ Log into the LTO computer with:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ssh sat\_data\@lto5.tropos.de
+(password: **AbS11!**)
+</pre></div>
+</div>
+<p>→ check the status with:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mtx -f /dev/sg1 status
+</pre></div>
+</div>
+<p>→ The data transfer element has to be
+empty.</p>
+<a class="reference external image-reference" href="/vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_1.png"><img alt="Image 1" src="vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_1.png" /></a>
+<p>If this isn’t the case you have to unload it with:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mtx -f /dev/sg1 unload
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Ask Hartwig for the key to access the server-room in building
+23.5.</p></li>
+<li><p>Use room <strong>0.03</strong> in the ground floor of 23.5 to access room
+<strong>0.07</strong>. Here you will find the rack with the tape-computer and
+tape-drive right next to the door.</p></li>
+<li><p>At the tape-computer use the Next (►) or Previous key (◄) to
+navigate to “Operations”. Use Enter to get to the selection of which of
+the two magazines (each holding up to 4 tapes) you like to open.</p></li>
+</ol>
+<a class="reference external image-reference" href="/vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_2.png"><img alt="Image 2" src="vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_2.png" /></a>
+<p>Either use Enter again on “Unlock Left Magazine” or “Unlock Right
+Magazine” and wait a brief moment.</p>
+<ol class="arabic simple">
+<li><p>Kindly remove the unlocked magazine and insert or exchange
+tape(s). Always start with #1 (nearest position in the left magazine).</p></li>
+</ol>
+<a class="reference external image-reference" href="/vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_3.png"><img alt="Image 3" src="vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_3.png" /></a>
+<p><strong>Note</strong> The left magazine contains:  <em>Positions 1</em> to <em>4</em> (starting with #1)</p>
+<p>and the right magazine contains:  <em>Position 5</em> to <em>8</em> (starting with #5)</p>
+<ol class="arabic simple">
+<li><p>Re-insert the magazine and wait for the tape-computer to read the
+tape.</p></li>
+<li><p>Turn off the light, leave the room and lock the door.</p></li>
+<li><p>Give the key back to Hartwig.</p></li>
+<li><p>Log into the LTO computer again</p></li>
+</ol>
+<a class="reference external image-reference" href="/vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_4.png"><img alt="Image 4" src="vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_4.png" /></a>
+<ol class="arabic simple">
+<li><p>Go to the directory for tapes with:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cd /vols/talos/datasets/eumcst/incoming/umarf/tapes
+</pre></div>
+</div>
+<p>Execute the shell-script <strong>extract_tape</strong> for a single tape in <em>Positio 1</em>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nohup extract\_tape.sh \$TAPENAME &amp;
+</pre></div>
+</div>
+<p>or the shell script <strong>extract_tapes</strong> for multiple tapes:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>nohup extract\_tapes.sh \$TAPE1NAME \$TAPE2NAME \$TAPE3NAME &amp;
+</pre></div>
+</div>
+<p>For the tape names you can simply use <code class="docutils literal notranslate"><span class="pre">mtx</span> <span class="pre">-f</span> <span class="pre">/dev/sg1</span> <span class="pre">status</span></code> again, it
+shows them after VolumeTag=, remember to follow the position order.</p>
+<p><strong>Note</strong>: nohup lets you run programs even if you log out and writes any
+messages into the file nohup.out.</p>
+<ol class="arabic simple">
+<li><p>Now the data for Step III should be under:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/vols/talos/datasets/eumcst/incoming/umarf/tapes/(tapename)
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Unlike the http files the tape files don’t need to be unpacked,
+simply add them to the target folder:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/vols/altair/datasets/eumcst/incoming/umarf/http/(year)
+</pre></div>
+</div>
+<p><strong>Note:</strong> It can be useful to look into linux tape management to
+understand the process and solve possibly occurring errors.</p>
+<p>A starting point is:</p>
+<p><a class="reference external" href="https://www.cyberciti.biz/hardware/unix-linux-basic-tape-management-commands/">https://www.cyberciti.biz/hardware/unix-linux-basic-tape-management-commands/</a></p>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Gap Filling Documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ordering_data.html">Ordeting Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="copy_data_HTTP.html">Copy Data from HTTP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Extract Data from the Tapes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filling_gaps.html">Filling gaps in TROPOS archive after delivery</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="copy_data_HTTP.html" title="previous chapter">Copy Data from HTTP</a></li>
+      <li>Next: <a href="filling_gaps.html" title="next chapter">Filling gaps in TROPOS archive after delivery</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Bayer.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/extract_tapes.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

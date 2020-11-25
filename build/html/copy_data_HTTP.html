@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Copy Data from HTTP &#8212; Gap Filling Documentation v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Extract Data from the Tapes" href="extract_tapes.html" />
+    <link rel="prev" title="Ordeting Data" href="ordering_data.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="copy-data-from-http">
+<h1>Copy Data from HTTP<a class="headerlink" href="#copy-data-from-http" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="/vols/satellite/home/bayer/Satelite_gaps/source/images/copy_data_HTTP_1.png"><img alt="Image 1" src="vols/satellite/home/bayer/Satelite_gaps/source/images/copy_data_HTTP_1.png" /></a>
+<ol class="arabic simple">
+<li><p>Go to <strong>Order Status</strong> select your delivered order and <strong>Open Online Delivery Page</strong>.</p></li>
+</ol>
+<a class="reference external image-reference" href="/vols/satellite/home/bayer/Satelite_gaps/source/images/copy_data_HTTP_2.png"><img alt="Image 2" src="vols/satellite/home/bayer/Satelite_gaps/source/images/copy_data_HTTP_2.png" /></a>
+<ol class="arabic simple">
+<li><p>Download file(s) from the delivery page using <strong>Right Click + “Save file under…”</strong></p></li>
+</ol>
+<p>Please check, if the downloaded file is as big as given in the delivery
+page and that the archive contains as many slots as intended. If not, download again.</p>
+<ol class="arabic simple">
+<li><p>Move files from your local system to the <em>talos</em> server:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cd Downloads
+
+mv 1234567-1of1.tar /vols/talos/home/group\_share/misc\_documents/sat\_archive\_filling
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Log onto server altair as user “sat_data” with:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ssh -X sat\_data\@altair
+password: **Please ask**
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Move the file from talos to altair:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cd /vols/altair/datasets/eumcst/incoming/umarf/http/(year)
+
+mv /vols/talos/home/group\_share/misc\_documents/sat\_archive\_filling/\*.tar /vols/altair/datasets/eumcst/incoming/umarf/http/(year)
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Extract your order:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>tar -xvf 1234567-1of1.tar
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Gap Filling Documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ordering_data.html">Ordeting Data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Copy Data from HTTP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extract_tapes.html">Extract Data from the Tapes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filling_gaps.html">Filling gaps in TROPOS archive after delivery</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="ordering_data.html" title="previous chapter">Ordeting Data</a></li>
+      <li>Next: <a href="extract_tapes.html" title="next chapter">Extract Data from the Tapes</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Bayer.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/copy_data_HTTP.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
