@@ -29,11 +29,9 @@ password: S3V1R1umarf
 
 ![Image 4](./images/ordering_data_4.png)
 
-\- 0° for the Prime-Service (PZS)
-
-\- 9.5° for the Rapid-Scan-Service (RSS)
-
-\- 41.5° for the Indian Ocean
+* 0° for the Prime-Service (PZS)
+* 9.5° for the Rapid-Scan-Service (RSS)
+* 41.5° for the Indian Ocean
 
 ###5. Select the required period of time in the **Select Date / Time** field. Get results with **Apply** (might take a while).
 
