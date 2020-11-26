@@ -2,7 +2,7 @@
 
 ![Image 1](./images/copy_data_HTTP_1.png)
 
-###1. Go to **Order Status** select your delivered order and **Open Online Delivery Page**.
+### 1. Go to **Order Status** select your delivered order and **Open Online Delivery Page**.
 
 ![Image 2](./images/copy_data_HTTP_2.png)
 
