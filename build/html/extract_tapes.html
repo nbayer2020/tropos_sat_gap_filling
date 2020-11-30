@@ -34,9 +34,8 @@
             
   <div class="section" id="extract-data-from-the-tapes">
 <h1>Extract Data from the Tapes<a class="headerlink" href="#extract-data-from-the-tapes" title="Permalink to this headline">¶</a></h1>
-<ol class="arabic simple">
-<li><p>First you will have to check if the tape machine is ready.</p></li>
-</ol>
+<div class="section" id="first-you-will-have-to-check-if-the-tape-machine-is-ready">
+<h2>1. First you will have to check if the tape machine is ready.<a class="headerlink" href="#first-you-will-have-to-check-if-the-tape-machine-is-ready" title="Permalink to this headline">¶</a></h2>
 <p>→ Log into the LTO computer with:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ssh sat\_data\@lto5.tropos.de
 (password: **AbS11!**)
@@ -48,42 +47,52 @@
 </div>
 <p>→ The data transfer element has to be
 empty.</p>
-<a class="reference external image-reference" href="/vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_1.png"><img alt="Image 1" src="vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_1.png" /></a>
+<a class="reference external image-reference" href="./images/extract_tapes_1.png"><img alt="Image 1" src="_images/extract_tapes_1.png" /></a>
 <p>If this isn’t the case you have to unload it with:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mtx -f /dev/sg1 unload
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>Ask Hartwig for the key to access the server-room in building
-23.5.</p></li>
-<li><p>Use room <strong>0.03</strong> in the ground floor of 23.5 to access room
-<strong>0.07</strong>. Here you will find the rack with the tape-computer and
-tape-drive right next to the door.</p></li>
-<li><p>At the tape-computer use the Next (►) or Previous key (◄) to
-navigate to “Operations”. Use Enter to get to the selection of which of
-the two magazines (each holding up to 4 tapes) you like to open.</p></li>
-</ol>
-<a class="reference external image-reference" href="/vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_2.png"><img alt="Image 2" src="vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_2.png" /></a>
+</div>
+<div class="section" id="ask-hartwig-for-the-key-to-access-the-server-room-in-building">
+<h2>2. Ask Hartwig for the key to access the server-room in building<a class="headerlink" href="#ask-hartwig-for-the-key-to-access-the-server-room-in-building" title="Permalink to this headline">¶</a></h2>
+<p>23.5.</p>
+</div>
+<div class="section" id="use-room-0-03-in-the-ground-floor-of-23-5-to-access-room">
+<h2>3. Use room <strong>0.03</strong> in the ground floor of 23.5 to access room<a class="headerlink" href="#use-room-0-03-in-the-ground-floor-of-23-5-to-access-room" title="Permalink to this headline">¶</a></h2>
+<p><strong>0.07</strong>. Here you will find the rack with the tape-computer and
+tape-drive right next to the door.</p>
+</div>
+<div class="section" id="at-the-tape-computer-use-the-next-or-previous-key-to">
+<h2>4. At the tape-computer use the Next (►) or Previous key (◄) to<a class="headerlink" href="#at-the-tape-computer-use-the-next-or-previous-key-to" title="Permalink to this headline">¶</a></h2>
+<p>navigate to “Operations”. Use Enter to get to the selection of which of
+the two magazines (each holding up to 4 tapes) you like to open.</p>
+<a class="reference external image-reference" href="./images/extract_tapes_2.png"><img alt="Image 2" src="_images/extract_tapes_2.png" /></a>
 <p>Either use Enter again on “Unlock Left Magazine” or “Unlock Right
 Magazine” and wait a brief moment.</p>
-<ol class="arabic simple">
-<li><p>Kindly remove the unlocked magazine and insert or exchange
-tape(s). Always start with #1 (nearest position in the left magazine).</p></li>
-</ol>
-<a class="reference external image-reference" href="/vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_3.png"><img alt="Image 3" src="vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_3.png" /></a>
+</div>
+<div class="section" id="kindly-remove-the-unlocked-magazine-and-insert-or-exchange">
+<h2>5. Kindly remove the unlocked magazine and insert or exchange<a class="headerlink" href="#kindly-remove-the-unlocked-magazine-and-insert-or-exchange" title="Permalink to this headline">¶</a></h2>
+<p>tape(s). Always start with #1 (nearest position in the left magazine).</p>
+<a class="reference external image-reference" href="./images/extract_tapes_3.png"><img alt="Image 3" src="_images/extract_tapes_3.png" /></a>
 <p><strong>Note</strong> The left magazine contains:  <em>Positions 1</em> to <em>4</em> (starting with #1)</p>
 <p>and the right magazine contains:  <em>Position 5</em> to <em>8</em> (starting with #5)</p>
-<ol class="arabic simple">
-<li><p>Re-insert the magazine and wait for the tape-computer to read the
-tape.</p></li>
-<li><p>Turn off the light, leave the room and lock the door.</p></li>
-<li><p>Give the key back to Hartwig.</p></li>
-<li><p>Log into the LTO computer again</p></li>
-</ol>
-<a class="reference external image-reference" href="/vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_4.png"><img alt="Image 4" src="vols/satellite/home/bayer/Satelite_gaps/source/images/extract_tapes_4.png" /></a>
-<ol class="arabic simple">
-<li><p>Go to the directory for tapes with:</p></li>
-</ol>
+</div>
+<div class="section" id="re-insert-the-magazine-and-wait-for-the-tape-computer-to-read-the">
+<h2>6. Re-insert the magazine and wait for the tape-computer to read the<a class="headerlink" href="#re-insert-the-magazine-and-wait-for-the-tape-computer-to-read-the" title="Permalink to this headline">¶</a></h2>
+<p>tape.</p>
+</div>
+<div class="section" id="turn-off-the-light-leave-the-room-and-lock-the-door">
+<h2>7. Turn off the light, leave the room and lock the door.<a class="headerlink" href="#turn-off-the-light-leave-the-room-and-lock-the-door" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="give-the-key-back-to-hartwig">
+<h2>8. Give the key back to Hartwig.<a class="headerlink" href="#give-the-key-back-to-hartwig" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="log-into-the-lto-computer-again">
+<h2>9. Log into the LTO computer again<a class="headerlink" href="#log-into-the-lto-computer-again" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="./images/extract_tapes_4.png"><img alt="Image 4" src="_images/extract_tapes_4.png" /></a>
+</div>
+<div class="section" id="go-to-the-directory-for-tapes-with">
+<h2>10. Go to the directory for tapes with:<a class="headerlink" href="#go-to-the-directory-for-tapes-with" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cd /vols/talos/datasets/eumcst/incoming/umarf/tapes
 </pre></div>
 </div>
@@ -99,16 +108,16 @@ tape.</p></li>
 shows them after VolumeTag=, remember to follow the position order.</p>
 <p><strong>Note</strong>: nohup lets you run programs even if you log out and writes any
 messages into the file nohup.out.</p>
-<ol class="arabic simple">
-<li><p>Now the data for Step III should be under:</p></li>
-</ol>
+</div>
+<div class="section" id="now-the-data-for-step-iii-should-be-under">
+<h2>11. Now the data for Step III should be under:<a class="headerlink" href="#now-the-data-for-step-iii-should-be-under" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/vols/talos/datasets/eumcst/incoming/umarf/tapes/(tapename)
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>Unlike the http files the tape files don’t need to be unpacked,
-simply add them to the target folder:</p></li>
-</ol>
+</div>
+<div class="section" id="unlike-the-http-files-the-tape-files-don-t-need-to-be-unpacked">
+<h2>12. Unlike the http files the tape files don’t need to be unpacked,<a class="headerlink" href="#unlike-the-http-files-the-tape-files-don-t-need-to-be-unpacked" title="Permalink to this headline">¶</a></h2>
+<p>simply add them to the target folder:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>/vols/altair/datasets/eumcst/incoming/umarf/http/(year)
 </pre></div>
 </div>
@@ -116,6 +125,7 @@ simply add them to the target folder:</p></li>
 understand the process and solve possibly occurring errors.</p>
 <p>A starting point is:</p>
 <p><a class="reference external" href="https://www.cyberciti.biz/hardware/unix-linux-basic-tape-management-commands/">https://www.cyberciti.biz/hardware/unix-linux-basic-tape-management-commands/</a></p>
+</div>
 </div>
 
 
@@ -139,7 +149,21 @@ understand the process and solve possibly occurring errors.</p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="ordering_data.html">Ordeting Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="copy_data_HTTP.html">Copy Data from HTTP</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Extract Data from the Tapes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Extract Data from the Tapes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#first-you-will-have-to-check-if-the-tape-machine-is-ready">1. First you will have to check if the tape machine is ready.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ask-hartwig-for-the-key-to-access-the-server-room-in-building">2. Ask Hartwig for the key to access the server-room in building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-room-0-03-in-the-ground-floor-of-23-5-to-access-room">3. Use room <strong>0.03</strong> in the ground floor of 23.5 to access room</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#at-the-tape-computer-use-the-next-or-previous-key-to">4. At the tape-computer use the Next (►) or Previous key (◄) to</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kindly-remove-the-unlocked-magazine-and-insert-or-exchange">5. Kindly remove the unlocked magazine and insert or exchange</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#re-insert-the-magazine-and-wait-for-the-tape-computer-to-read-the">6. Re-insert the magazine and wait for the tape-computer to read the</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#turn-off-the-light-leave-the-room-and-lock-the-door">7. Turn off the light, leave the room and lock the door.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#give-the-key-back-to-hartwig">8. Give the key back to Hartwig.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#log-into-the-lto-computer-again">9. Log into the LTO computer again</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#go-to-the-directory-for-tapes-with">10. Go to the directory for tapes with:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#now-the-data-for-step-iii-should-be-under">11. Now the data for Step III should be under:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unlike-the-http-files-the-tape-files-don-t-need-to-be-unpacked">12. Unlike the http files the tape files don’t need to be unpacked,</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="filling_gaps.html">Filling gaps in TROPOS archive after delivery</a></li>
 </ul>
 

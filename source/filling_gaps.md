@@ -35,7 +35,7 @@ GNU Screen, so you can log out of the computer and later resume
 sessions. You may look up
 [*http://nathan.chantrell.net/linux/an-introduction-to-screen/*](http://nathan.chantrell.net/linux/an-introduction-to-screen/) for an introduction on GNU Screen.
 
-###1\. Adding data to the archive
+### 1. Adding data to the archive
 
 ```fmcast\_ms15\_update.py \$DIR1 \... \$DIRN &```
 
@@ -54,7 +54,7 @@ Afterwards you will have to clear the directory:
 
 ```rm \*.tar```
 
-###2\. Updating the segment masks
+### 2. Updating the segment masks
 
 This doesn\'t have to be done every time. It is enough to do it after a
 significant chunk of data is added.
@@ -79,7 +79,7 @@ A date period (equivalent to -m 2013-01):
 **Note:** this step is quite time-consuming, as it obtains the list of
 files from each tarfile. Using nohup is recommended.
 
-###3\. Obtaining statistics/gap information**
+### 3. Obtaining statistics/gap information**
 
 To find gaps for a year, do the following:
 

@@ -34,44 +34,44 @@
             
   <div class="section" id="copy-data-from-http">
 <h1>Copy Data from HTTP<a class="headerlink" href="#copy-data-from-http" title="Permalink to this headline">¶</a></h1>
-<a class="reference external image-reference" href="/vols/satellite/home/bayer/Satelite_gaps/source/images/copy_data_HTTP_1.png"><img alt="Image 1" src="vols/satellite/home/bayer/Satelite_gaps/source/images/copy_data_HTTP_1.png" /></a>
-<ol class="arabic simple">
-<li><p>Go to <strong>Order Status</strong> select your delivered order and <strong>Open Online Delivery Page</strong>.</p></li>
-</ol>
-<a class="reference external image-reference" href="/vols/satellite/home/bayer/Satelite_gaps/source/images/copy_data_HTTP_2.png"><img alt="Image 2" src="vols/satellite/home/bayer/Satelite_gaps/source/images/copy_data_HTTP_2.png" /></a>
-<ol class="arabic simple">
-<li><p>Download file(s) from the delivery page using <strong>Right Click + “Save file under…”</strong></p></li>
-</ol>
+<a class="reference external image-reference" href="./images/copy_data_HTTP_1.png"><img alt="Image 1" src="_images/copy_data_HTTP_1.png" /></a>
+<div class="section" id="go-to-order-status-select-your-delivered-order-and-open-online-delivery-page">
+<h2>1. Go to <strong>Order Status</strong> select your delivered order and <strong>Open Online Delivery Page</strong>.<a class="headerlink" href="#go-to-order-status-select-your-delivered-order-and-open-online-delivery-page" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="./images/copy_data_HTTP_2.png"><img alt="Image 2" src="_images/copy_data_HTTP_2.png" /></a>
+</div>
+<div class="section" id="download-file-s-from-the-delivery-page-using-right-click-save-file-under">
+<h2>2. Download file(s) from the delivery page using <strong>Right Click + “Save file under…”</strong><a class="headerlink" href="#download-file-s-from-the-delivery-page-using-right-click-save-file-under" title="Permalink to this headline">¶</a></h2>
 <p>Please check, if the downloaded file is as big as given in the delivery
 page and that the archive contains as many slots as intended. If not, download again.</p>
-<ol class="arabic simple">
-<li><p>Move files from your local system to the <em>talos</em> server:</p></li>
-</ol>
+</div>
+<div class="section" id="move-files-from-your-local-system-to-the-talos-server">
+<h2>3. Move files from your local system to the <em>talos</em> server:<a class="headerlink" href="#move-files-from-your-local-system-to-the-talos-server" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cd Downloads
 
 mv 1234567-1of1.tar /vols/talos/home/group\_share/misc\_documents/sat\_archive\_filling
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>Log onto server altair as user “sat_data” with:</p></li>
-</ol>
+</div>
+<div class="section" id="log-onto-server-altair-as-user-sat-data-with">
+<h2>4. Log onto server altair as user “sat_data” with:<a class="headerlink" href="#log-onto-server-altair-as-user-sat-data-with" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ssh -X sat\_data\@altair
 password: **Please ask**
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>Move the file from talos to altair:</p></li>
-</ol>
+</div>
+<div class="section" id="move-the-file-from-talos-to-altair">
+<h2>5. Move the file from talos to altair:<a class="headerlink" href="#move-the-file-from-talos-to-altair" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cd /vols/altair/datasets/eumcst/incoming/umarf/http/(year)
 
 mv /vols/talos/home/group\_share/misc\_documents/sat\_archive\_filling/\*.tar /vols/altair/datasets/eumcst/incoming/umarf/http/(year)
 </pre></div>
 </div>
-<ol class="arabic simple">
-<li><p>Extract your order:</p></li>
-</ol>
+</div>
+<div class="section" id="extract-your-order">
+<h2>6. Extract your order:<a class="headerlink" href="#extract-your-order" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>tar -xvf 1234567-1of1.tar
 </pre></div>
+</div>
 </div>
 </div>
 
@@ -95,7 +95,15 @@ mv /vols/talos/home/group\_share/misc\_documents/sat\_archive\_filling/\*.tar /v
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="ordering_data.html">Ordeting Data</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Copy Data from HTTP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Copy Data from HTTP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#go-to-order-status-select-your-delivered-order-and-open-online-delivery-page">1. Go to <strong>Order Status</strong> select your delivered order and <strong>Open Online Delivery Page</strong>.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#download-file-s-from-the-delivery-page-using-right-click-save-file-under">2. Download file(s) from the delivery page using <strong>Right Click + “Save file under…”</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#move-files-from-your-local-system-to-the-talos-server">3. Move files from your local system to the <em>talos</em> server:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#log-onto-server-altair-as-user-sat-data-with">4. Log onto server altair as user “sat_data” with:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#move-the-file-from-talos-to-altair">5. Move the file from talos to altair:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extract-your-order">6. Extract your order:</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="extract_tapes.html">Extract Data from the Tapes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="filling_gaps.html">Filling gaps in TROPOS archive after delivery</a></li>
 </ul>
