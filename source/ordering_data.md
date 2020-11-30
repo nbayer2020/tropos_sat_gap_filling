@@ -58,9 +58,9 @@ is correct.
 
 ![Image 9](./images/ordering_data_9.png)
 
-→ "Online HTTP" if the order is ≤80 GB
+→ "Online HTTP" if the order is **bigger than 80 GB**
 
-→ "On Media" if the order is \>80 GB
+→ "On Media" if the order is **less than 80 GB**
 
 By delivery option **no compression** is fine because the data files are already compressed.
 
