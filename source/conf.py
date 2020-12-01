@@ -99,5 +99,5 @@ latex_elements = {
 
     # Additional stuff for the LaTeX preamble.
     #
-    'preamble': r'\usepackage{pmboxdraw} \usepackage[utf8x]{inputenc} ',
+    #'preamble': r'\usepackage{pmboxdraw} \usepackage[utf8x]{inputenc} ',
 }
