@@ -2,20 +2,20 @@
 
 ### 1. First you will have to check if the tape machine is ready.
 
-→ Log into the LTO computer with:
+* Log into the LTO computer with:
 
 ```
 ssh sat_data@lto5.tropos.de
 (password: **AbS11!**)
 ```
 
-→ check the status with:
+* check the status with:
 
 ```
 mtx -f /dev/sg1 status
 ```
 
-→ The data transfer element has to be
+* The data transfer element has to be
 empty.
 ![Image 1](./images/extract_tapes_1.png)
 
