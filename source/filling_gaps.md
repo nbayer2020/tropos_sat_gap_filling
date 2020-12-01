@@ -3,11 +3,11 @@
 
 **Note:** the actual archive is at
 
-```/vols/altair/datasets/eumcst/msevi\_pzs/l15.hrit/(year)```
+```/vols/altair/datasets/eumcst/msevi_pzs/l15.hrit/(year)```
 
 and
 
-```/vols/altair/datasets/eumcst/msevi\_rss/l15.hrit/(year)```
+```/vols/altair/datasets/eumcst/msevi_rss/l15.hrit/(year)```
 
 The filling process assumes that you have copied and extracted data from
 tape or HTTP into a unique directory under:
@@ -26,7 +26,7 @@ of II.a)
 In addition, you need to set the path to include the Anaconda python
 environment by using the following command:
 
-```export PATH=/vols/talos/local/anaconda/bin:\$PATH```
+```export PATH=/vols/talos/local/anaconda/bin:$PATH```
 
 **Note:** GNU Screen
 
@@ -37,13 +37,13 @@ sessions. You may look up
 
 ### 1. Adding data to the archive
 
-```fmcast\_ms15\_update.py \$DIR1 \... \$DIRN &```
+```fmcast_ms15_update.py $DIR1 ... $DIRN &```
 
 Example:
 
 ```cd /vols/altair/datasets/eumcst/incoming/umarf/http/2016```
 
-```nohup fmcast\_ms15\_update.py /vols/altair/datasets/eumcst/incoming/umarf/http/2016/\* &```
+```nohup fmcast_ms15_update.py /vols/altair/datasets/eumcst/incoming/umarf/http/2016/* &```
 
 This command traverses each directory tree. For each tarfile containing
 HRITs, it checks whether a corresponding tarfile is already in the
@@ -52,29 +52,29 @@ HRIT files are added otherwise a new tarfile is created in the archive.
 
 Afterwards you will have to clear the directory:
 
-```rm \*.tar```
+```rm *.tar```
 
 ### 2. Updating the segment masks
 
-This doesn\'t have to be done every time. It is enough to do it after a
+This doesn't have to be done every time. It is enough to do it after a
 significant chunk of data is added.
 
 Issue the command to update the segment mask e.g. for the year 2013 and
-the Rapid-Scan-Service (\'rss\', for Prime-Service use \'pzs\'):
+the Rapid-Scan-Service ('rss', for Prime-Service use 'pzs'):
 
-```fmcast\_ms15\_segmask.py -A -y 2013 -s \'rss\'```
+```fmcast_ms15_segmask.py -A -y 2013 -s 'rss'```
 
 You can also specify the date interval for a month (here: Jan 2013):
 
-```fmcast\_ms15\_segmask.py -A -m 2013-01 -s \'rss\'```
+```fmcast_ms15_segmask.py -A -m 2013-01 -s 'rss'```
 
 A specific date (here: 1^st^ Jan 2013):
 
-```fmcast\_ms15\_segmask.py -A -d 2013-01-01 -s \'rss\'```
+```fmcast_ms15_segmask.py -A -d 2013-01-01 -s 'rss'```
 
 A date period (equivalent to -m 2013-01):
 
-```fmcast\_ms15\_segmask.py -A -d 2013-01-01,2013-02-01 -s \'rss\'```
+```fmcast_ms15_segmask.py -A -d 2013-01-01,2013-02-01 -s 'rss'```
 
 **Note:** this step is quite time-consuming, as it obtains the list of
 files from each tarfile. Using nohup is recommended.
@@ -83,7 +83,7 @@ files from each tarfile. Using nohup is recommended.
 
 To find gaps for a year, do the following:
 
-```cat /vols/altair/datasets/eumcst/msevi\_rss/meta/segmasks/2013/??/\*.segmask \| sort \| \\ fmcast\_ms15\_gaps.py -y 2013 \> gaps-2013-rss.txt```
+```cat /vols/altair/datasets/eumcst/msevi_rss/meta/segmasks/2013/??/*.segmask | sort |  fmcast_ms15_gaps.py -y 2013 > gaps-2013-rss.txt```
 
 This will produce output as follows:
 ```
@@ -93,11 +93,11 @@ This will produce output as follows:
 ```
 To split the file in large gaps, use the following command:
 
-```cat gaps-2013-rss.txt \| awk \'{if(\$6\>=10)print}\' \| less \> gaps-2013-rss-long.txt```
+```cat gaps-2013-rss.txt | awk '{if($6>=10)print}' | less > gaps-2013-rss-long.txt```
 
 Small gaps can be viewed with:
 
-```cat gaps-2013-rss.txt \| awk \'{if(\$6\<10)print}\' \| less \> gaps-2013-rss-short.txt```
+```cat gaps-2013-rss.txt | awk '{if($6<10)print}' | less > gaps-2013-rss-short.txt```
 
 To create PDFs to print out and put in the sat-archiving file, use:
 
@@ -107,28 +107,28 @@ ps2pdf gaps-2013-pzs-long.ps gaps-2013-pzs-long.pdf
 
 Afterwards you can remove the ps-files
 
-It\'s also possible to obtain summary statistics for a year:
+It's also possible to obtain summary statistics for a year:
 
-```cat /vols/altair/datasets/eumcst/msevi\_rss/meta/segmasks/2013/??/\*.segmask \| sort \| \\ fmcast\_ms15\_stats.py -y 2013```
+```cat /vols/altair/datasets/eumcst/msevi_rss/meta/segmasks/2013/??/*.segmask | sort |  fmcast_ms15_stats.py -y 2013```
 
 This will produce output as follows:
 ```
-\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+############################
 
-\# Yearly reception statistics: 2013
+# Yearly reception statistics: 2013
 
-\# Date \#Files \[%\] \#Slots \[%\] \#Compl. \[%\]
+# Date #Files [%] #Slots [%] #Compl. [%]
 
-\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+############################
 2013-01-01 12672 100.00 288 100.00 288 100.00
 
-\...
+...
 
 2013-12-31 12660 99.91 288 100.00 284 98.61
 
-\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+############################
 
 Combined 3951734 85.44 89859 85.48 89375 85.02
 
-\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+############################
 ```

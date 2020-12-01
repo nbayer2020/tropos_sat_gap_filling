@@ -8,7 +8,7 @@
 
 ```
 username: hdeneke
-password: S3V1R1umarf
+password: ******
 ```
 
 ### 2. Start the data centre application using **Access** under **Data Centre**.
@@ -72,7 +72,7 @@ Finally send the order with "Place your order".
 
 ### 11. Note the order number at our wiki:
 
-[http://wiki-intern.tropos.de/index.php/EUMETSAT\_Data\_Ordering\_Diary](http://wiki-intern.tropos.de/index.php/EUMETSAT_Data_Ordering_Diary)
+[http://wiki-intern.tropos.de/index.php/EUMETSAT_Data_Ordering_Diary](http://wiki-intern.tropos.de/index.php/EUMETSAT_Data_Ordering_Diary)
 
 ![Image 11](./images/ordering_data_11.png)
 
@@ -84,4 +84,3 @@ Finally send the order with "Place your order".
 * Processing (order is en route),
 * Delivered (order is delivered),
 * Error (order went wrong)
-

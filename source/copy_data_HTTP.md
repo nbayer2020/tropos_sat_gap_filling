@@ -6,7 +6,7 @@
 
 ![Image 2](./images/copy_data_HTTP_2.png)
 
-### 2. Download file(s) from the delivery page using **Right Click + "Save file under\..."**
+### 2. Download file(s) from the delivery page using **Right Click + "Save file under..."**
 
 Please check, if the downloaded file is as big as given in the delivery
 page and that the archive contains as many slots as intended. If not, download again.
@@ -16,13 +16,13 @@ page and that the archive contains as many slots as intended. If not, download a
 ```
 cd Downloads
 
-mv 1234567-1of1.tar /vols/talos/home/group\_share/misc\_documents/sat\_archive\_filling
+mv 1234567-1of1.tar /vols/talos/home/group_share/misc_documents/sat_archive_filling
 ```
 
-### 4. Log onto server altair as user "sat\_data" with:
+### 4. Log onto server altair as user "sat_data" with:
 
 ```
-ssh -X sat\_data\@altair 
+ssh -X sat_data@altair
 password: **Please ask**
 ```
 
@@ -31,7 +31,7 @@ password: **Please ask**
 ```
 cd /vols/altair/datasets/eumcst/incoming/umarf/http/(year)
 
-mv /vols/talos/home/group\_share/misc\_documents/sat\_archive\_filling/\*.tar /vols/altair/datasets/eumcst/incoming/umarf/http/(year)
+mv /vols/talos/home/group_share/misc_documents/sat_archive_filling/*.tar /vols/altair/datasets/eumcst/incoming/umarf/http/(year)
 ```
 
 ### 6. Extract your order:
