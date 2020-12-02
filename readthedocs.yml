@@ -23,10 +23,8 @@ formats:
 python:
   version: 3.7
   install:
-    - requirements: requirements
+    - requirements: ./requirements
     - method: pip
-      path: .
-
     - method: setuptools
       path: another/package
   system_packages: true
