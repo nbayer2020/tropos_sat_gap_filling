@@ -8,7 +8,7 @@
 
 ```
 username: hdeneke
-password: S3V1R1umarf
+password: ******
 ```
 
 ### 2. Start the data centre application using **Access** under **Data Centre**.
@@ -50,7 +50,7 @@ password: S3V1R1umarf
 
 ![Image 8](./images/ordering_data_8.png)
 
-Use ◄ and ► to browse through the selected period of time and use **CTRL + Left Click** to select the slots you want. If you are done with
+Use < and > to browse through the selected period of time and use **CTRL + Left Click** to select the slots you want. If you are done with
 the selection use **Remove Unselected** to clear all unwanted slots from your list. Double-check if no slot is missing. Use "Close" if everything
 is correct.
 
@@ -58,9 +58,9 @@ is correct.
 
 ![Image 9](./images/ordering_data_9.png)
 
-→ "Online HTTP" if the order is **bigger than 80 GB**
+* "Online HTTP" if the order is **bigger than 80 GB**
 
-→ "On Media" if the order is **less than 80 GB**
+* "On Media" if the order is **less than 80 GB**
 
 By delivery option **no compression** is fine because the data files are already compressed.
 
@@ -72,7 +72,7 @@ Finally send the order with "Place your order".
 
 ### 11. Note the order number at our wiki:
 
-[http://wiki-intern.tropos.de/index.php/EUMETSAT\_Data\_Ordering\_Diary](http://wiki-intern.tropos.de/index.php/EUMETSAT_Data_Ordering_Diary)
+[http://wiki-intern.tropos.de/index.php/EUMETSAT_Data_Ordering_Diary](http://wiki-intern.tropos.de/index.php/EUMETSAT_Data_Ordering_Diary)
 
 ![Image 11](./images/ordering_data_11.png)
 
@@ -84,4 +84,3 @@ Finally send the order with "Place your order".
 * Processing (order is en route),
 * Delivered (order is delivered),
 * Error (order went wrong)
-
