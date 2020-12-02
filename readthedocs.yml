@@ -26,7 +26,7 @@ python:
   install:
     - requirements: requirements.txt
     - method: pip
-      path: /vols/satellite(bayer/Satellite_gaps/
+      path: /vols/satellite/bayer/Satelite_gaps/
     - method: setuptools
       path: package
   system_packages: true
