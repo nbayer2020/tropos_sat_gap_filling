@@ -5,13 +5,16 @@
 
 Satellite Gap Filling Documentation
 ===================================
+.. figure:: /images/TROPOS-Logo_ENG.png
+  :width: 200
+  :alt: Alternative text
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    ordering_data
-   copy_data_HTTP
+   copy_data_http
    extract_tapes
    filling_gaps
 
