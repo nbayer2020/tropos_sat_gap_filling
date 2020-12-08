@@ -5,7 +5,7 @@
 
 Satellite Gap Filling Documentation
 ===================================
-.. figure:: /images/TROPOS-Logo_ENG.png
+.. image:: /images/TROPOS-Logo_ENG.png
   :width: 200
   :alt: Alternative text
 
