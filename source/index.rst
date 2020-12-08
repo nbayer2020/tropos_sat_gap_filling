@@ -5,9 +5,6 @@
 
 Satellite Gap Filling Documentation
 ===================================
-.. image:: /images/TROPOS-Logo_ENG.png
-  :width: 200
-  :alt: Alternative text
 
 .. toctree::
    :maxdepth: 2
