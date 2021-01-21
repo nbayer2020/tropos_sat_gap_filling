@@ -136,50 +136,62 @@ latex_elements = {
      'preamble': r'''
         %%%add number to subsubsection 2=subsection, 3=subsubsection
         %%% below subsubsection is not good idea.
-        \setcounter{secnumdepth}{3}
+        %\setcounter{secnumdepth}{3}
         %
         %%%% Table of content upto 2=subsection, 3=subsubsection
         \setcounter{tocdepth}{2}
         \usepackage{amsmath,amsfonts,amssymb,amsthm}
         \usepackage{graphicx}
+        
         %%% reduce spaces for Table of contents, figures and tables
         %%% it is used "\addtocontents{toc}{\vskip -1.2cm}" etc. in the document
         \usepackage[notlot,nottoc,notlof]{}
+        
         \usepackage{color}
         \usepackage{transparent}
         \usepackage{eso-pic}
         \usepackage{lipsum}
-        \usepackage{footnotebackref} %%link at the footnote to go to the place of footnote in the text
+        
+        %\usepackage{footnotebackref} %%link at the footnote to go to the place of footnote in the text
+       
         %% spacing between line
         \usepackage{setspace}
         %%%%\onehalfspacing
         %%%%\doublespacing
         \singlespacing
+        
         %%%%%%%%%%% datetime
         \usepackage{datetime}
+        
         \newdateformat{MonthYearFormat}{%
             \monthname[\THEMONTH], \THEYEAR} 
       ''',
      
      'maketitle': r'''
         \pagenumbering{Roman} %%% to avoid page 1 conflict with actual page 1
+        
         \begin{titlepage}
             \centering
+            
             \vspace*{40mm} %%% * is used to give space from top
             \textbf{\Huge {Satellite Gap Filling Documentation}}\\[20pt]
+            
             \vspace{20mm}
             \begin{figure}[!h]
                 \centering
                 \includegraphics[scale=1]{TROPOS-Logo_ENG.png}
             \end{figure}
             \vspace{20mm}
+            
             \Large {Nicolas Bayer}
+            
             \vspace*{0mm}
             \small  Last updated : \today
         \end{titlepage}
-        \clearpage
+        
+        %\clearpage
         \pagenumbering{roman}
-        \tableofcontents
+        %\tableofcontents
         \pagenumbering{arabic}
         ''',
 
