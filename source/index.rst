@@ -15,9 +15,8 @@ Satellite Gap Filling Documentation
    extract_tapes
    filling_gaps
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. Indices and tables
+   ===============
+   * :ref:`genindex`
+   * :ref:`modindex`
+   * :ref:`search`
