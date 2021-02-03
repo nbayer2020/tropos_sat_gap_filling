@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Gap Filling Documentation'
-copyright = '2020, Bayer'
-author = 'Bayer'
+copyright = '2020, Nicolas Bayer'
+author = 'Nicolas Bayer'
 
 # The short X.Y version
 version = ''
@@ -40,11 +40,11 @@ release = 'v0.1'
 #]
 # extensions from fabian
 extensions = [
-#    'recommonmark',
+#     'recommonmark',
      'm2rr',
-#    'sphinx.ext.autodoc',
-#    'sphinx.ext.autosummary',
-#    'sphinx.ext.napoleon'
+#     'sphinx.ext.autodoc',
+#     'sphinx.ext.autosummary',
+#     'sphinx.ext.napoleon'
 ]
 #################
 
@@ -52,6 +52,7 @@ extensions = [
 templates_path = ['_templates']
 
 # Set master (rst file)
+# The master toctree document.
 master_doc = 'index'
 
 # The suffix(es) of source filenames.
@@ -72,34 +73,130 @@ autodoc_mock_imports = ["tropy"]
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+# If true, `todo` and `todoList` produce output, else they produce nothing.
+todo_include_todos = True
 
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+# html_theme = 'nature'
+#html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
+
+# Theme options are theme-specific and customize the look and feel of a theme
+# further.  For a list of options available for each theme, see the
+# documentation.
+#
+# html_theme_options = {}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = []
 
+# Custom sidebar templates, must be a dictionary that maps document names
+# to template names.
+#
+# This is required for the alabaster theme
+# refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
+# html_sidebars = {
+#     '**': [
+#         'about.html',
+#         'navigation.html',
+#         'relations.html',  # needs 'show_related': True theme option to display
+#         'searchbox.html',
+#         'donate.html',
+#     ]
+# }
+
 # Add TROPOS Logo for the HTML page. 
 html_logo = './images/TROPOS-Logo_ENG.png'
 
 # -- Options for LaTeX output ------------------------------------------------
 
+latex_engine = 'pdflatex'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
     'papersize': 'a4paper',
 
+    'fncychap': '\\usepackage{fncychap}',
+    'fontpkg': '\\usepackage{amsmath,amsfonts,amssymb,amsthm}',
+
+    'figure_align':'htbp',
     # The font size ('10pt', '11pt' or '12pt').
     #
     # 'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
     #
-    #'preamble': r'\usepackage{pmboxdraw} \usepackage[utf8x]{inputenc} ',
+    #
+     'preamble': r'''
+        %%%add number to subsubsection 2=subsection, 3=subsubsection
+        %%% below subsubsection is not good idea.
+        %\setcounter{secnumdepth}{3}
+        %
+        %%%% Table of content upto 2=subsection, 3=subsubsection
+        \setcounter{tocdepth}{2}
+        \usepackage{amsmath,amsfonts,amssymb,amsthm}
+        \usepackage{graphicx}
+        
+        %%% reduce spaces for Table of contents, figures and tables
+        %%% it is used "\addtocontents{toc}{\vskip -1.2cm}" etc. in the document
+        \usepackage[notlot,nottoc,notlof]{}
+        
+        \usepackage{color}
+        \usepackage{transparent}
+        \usepackage{eso-pic}
+        \usepackage{lipsum}
+        
+        %\usepackage{footnotebackref} %%link at the footnote to go to the place of footnote in the text
+       
+        %% spacing between line
+        \usepackage{setspace}
+        %%%%\onehalfspacing
+        %%%%\doublespacing
+        \singlespacing
+        
+        %%%%%%%%%%% datetime
+        \usepackage{datetime}
+        
+        \newdateformat{MonthYearFormat}{%
+            \monthname[\THEMONTH], \THEYEAR} 
+      ''',
+     
+     'maketitle': r'''
+        \pagenumbering{Roman} %%% to avoid page 1 conflict with actual page 1
+        
+        \begin{titlepage}
+            \centering
+            
+            \vspace*{40mm} %%% * is used to give space from top
+            \textbf{\Huge {Satellite Gap Filling Documentation}}\\[20pt]
+            
+            \vspace{20mm}
+            \begin{figure}[!h]
+                \centering
+                \includegraphics[scale=1]{TROPOS-Logo_ENG.png}
+            \end{figure}
+            \vspace{20mm}
+            
+            \Large {Nicolas Bayer}
+            
+            \vspace*{0mm}
+            \small  Last updated : \today
+        \end{titlepage}
+        
+        %\clearpage
+        \pagenumbering{roman}
+        %\tableofcontents
+        \pagenumbering{arabic}
+        ''',
+
 }
+
+latex_logo = './images/TROPOS-Logo_ENG.png'
+
+
