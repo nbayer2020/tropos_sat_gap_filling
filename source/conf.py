@@ -170,25 +170,26 @@ latex_elements = {
 
      'maketitle': r'''
         \pagenumbering{Roman} %%% to avoid page 1 conflict with actual page 1
-        
+        \makeatletter
         \begin{titlepage}
             \centering
             
             \vspace*{40mm} %%% * is used to give space from top
-            \textbf{\Huge {Satellite Gap Filling Documentation}}\\[20pt]
+            \textbf{\Huge \@title }\\[20pt]
             
             \vspace{20mm}
             \begin{figure}[!h]
                 \centering
-                \includegraphics[scale=1]{TROPOS-Logo_ENG.png}
+                \sphinxlogo
             \end{figure}
             \vspace{20mm}
             
-            \Large {Nicolas Bayer}
+            \Large \@author \par 
             
             \vspace*{0mm}
-            \small  Last updated : \today
+            {\small  Generated: \today}
         \end{titlepage}
+        \makeatother
         
         %\clearpage
         \pagenumbering{roman}
